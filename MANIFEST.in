@@ -1,0 +1,5 @@
+include README.rst LICENSE.rst setup.cfg
+recursive-include rpi_displays/locale *
+recursive-include rpi_displays/templates *
+recursive-include rpi_displays/static *
+recursive-exclude rpi_displays .DS_Store
