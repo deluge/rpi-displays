@@ -1,4 +1,5 @@
-# rpi-displays
+rpi-displays
+============
 
 .. image:: https://badge.fury.io/py/rpi-displays.png
     :target: http://badge.fury.io/py/rpi-displays
@@ -15,7 +16,8 @@
 A Python 3 library to put text to several displays which are connected with a raspberry-pi.
 
 
-## Installation
+Installation
+------------
 
 .. note::
 
@@ -34,7 +36,8 @@ If you got the adafruit library up and running, you can simply install the lates
 ``pip install rpi-displays``
 
 
-## Usage
+Usage
+-----
 
 .. code-block:: python
 
@@ -64,7 +67,8 @@ If you got the adafruit library up and running, you can simply install the lates
     lcd.text('This is a very long text that has more than 20 chars and look what happens', 1)
 
 
-## Resources
+Resources
+---------
 
 * `Documentation <https://rpi-displays.readthedocs.org/>`_
 * `Bug Tracker <https://github.com/deluge/rpi-displays/issues>`_
