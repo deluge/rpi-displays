@@ -3,9 +3,8 @@ from time import sleep
 
 from ..channels import I2C
 from .constants import (
-    LCD_2LINE, LCD_4BITMODE, LCD_BACKLIGHT, LCD_CLEARDISPLAY, LCD_DISPLAYCONTROL, LCD_DISPLAYON,
-    LCD_ENTRYLEFT, LCD_ENTRYMODESET, LCD_FUNCTIONSET, LCD_NOBACKLIGHT, LCD_RETURNHOME, En,
-    LCD_5x8DOTS, Rs)
+    LCD_2LINE, LCD_4BITMODE, LCD_BACKLIGHT, LCD_CLEARDISPLAY, LCD_ENTRYLEFT, LCD_ENTRYMODESET,
+    LCD_FUNCTIONSET, LCD_NOBACKLIGHT, LCD_RETURNHOME, En, LCD_5x8DOTS, Rs)
 
 
 class LCD2004:
@@ -14,8 +13,11 @@ class LCD2004:
     It can be used for the 16x2 and 20x4
     """
 
-    def __init__(self, address=0x27, lines=LCD_2LINE, dots=LCD_5x8DOTS, bitmode=LCD_4BITMODE):
+    def __init__(
+            self, address=0x27, lines=LCD_2LINE, dots=LCD_5x8DOTS, bitmode=LCD_4BITMODE,
+            backlight=LCD_BACKLIGHT):
         self.device = I2C(address)
+        self.backlight = backlight
 
         self.set(0x03)
         self.set(0x03)
@@ -23,8 +25,6 @@ class LCD2004:
         self.set(0x02)
 
         self.set(LCD_FUNCTIONSET | lines | dots | bitmode)
-        self.set(LCD_DISPLAYCONTROL | LCD_DISPLAYON)
-        self.set(LCD_CLEARDISPLAY)
         self.set(LCD_ENTRYMODESET | LCD_ENTRYLEFT)
         sleep(0.2)
 
