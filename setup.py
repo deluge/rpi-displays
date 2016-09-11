@@ -55,7 +55,7 @@ setup(
     },
     classifiers=[
         'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: GNU General Public Version 3',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'Operating System :: Unix',
