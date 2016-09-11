@@ -67,6 +67,14 @@ Usage
     lcd.text('This is a very long text that has more than 20 chars and look what happens', 1)
 
 
+ToDos
+-----
+
+It would be nice to get this package more functionality and not only for one thing.
+Have a look at the `TODO.rst <https://github.com/deluge/rpi-displays/blob/master/TODO.rst/>`_
+So feel free to fork this repo and let it grow!
+
+
 Resources
 ---------
 
