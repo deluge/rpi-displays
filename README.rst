@@ -1,5 +1,4 @@
-rpi-displays
-============
+# rpi-displays
 
 .. image:: https://badge.fury.io/py/rpi-displays.png
     :target: http://badge.fury.io/py/rpi-displays
@@ -16,20 +15,26 @@ rpi-displays
 A Python 3 library to put text to several displays which are connected with a raspberry-pi.
 
 
-Installation
-============
+## Installation
 
 .. note::
 
     It requires the ``Adafruit-CharLCD`` package installed on your Raspberry Pi. A more detailed instruction is on `Adafruit_Python_CharLCD <https://github.com/adafruit/Adafruit_Python_CharLCD>`_
+
+.. hint::
+
+    Before you go on, try to use the Adafruit_Python_CharLCD library with a normal user **not root**.
+    It could be possible, that you get a ``IOError: [Errno 13] Permission denied``.
+    In that case, you have to add your user additional to the group `i2c`
+    ``sudo usermod -a -G GroupName UserName``
+
 
 If you got the adafruit library up and running, you can simply install the latest stable package using the command
 
 ``pip install rpi-displays``
 
 
-Usage
-=====
+## Usage
 
 .. code-block:: python
 
@@ -59,8 +64,7 @@ Usage
     lcd.text('This is a very long text that has more than 20 chars and look what happens', 1)
 
 
-Resources
-=========
+## Resources
 
 * `Documentation <https://rpi-displays.readthedocs.org/>`_
 * `Bug Tracker <https://github.com/deluge/rpi-displays/issues>`_
