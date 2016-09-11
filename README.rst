@@ -27,7 +27,8 @@ Installation
 
     Before you go on, try to use the Adafruit_Python_CharLCD library with a normal user **not root**.
     It could be possible, that you get a ``IOError: [Errno 13] Permission denied``.
-    In that case, you have to add your user additional to the group **i2c**
+    In that case, you have to add your user additional to the group **i2c** with:
+
     ``sudo usermod -a -G i2c UserName``
 
 
