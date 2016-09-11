@@ -32,13 +32,13 @@ class LCD2004:
 
     # clocks EN to latch command
     def strobe(self, data):
-        self.device.write_cmd(data | En | LCD_BACKLIGHT)
+        self.device.write_cmd(data | En | self.backlight)
         sleep(.0005)
-        self.device.write_cmd(((data & ~En) | LCD_BACKLIGHT))
+        self.device.write_cmd(((data & ~En) | self.backlight))
         sleep(.0001)
 
     def set_four_bits(self, data):
-        self.device.write_cmd(data | LCD_BACKLIGHT)
+        self.device.write_cmd(data | self.backlight)
         self.strobe(data)
 
     def set(self, cmd, mode=0):
