@@ -31,6 +31,14 @@ Installation
 
     ``sudo usermod -a -G i2c UserName``
 
+    Now your user got the permission for i2c, but last not least we have to activate
+    the module.
+
+    ``sudo modprobe i2c-bcm2708``
+
+    I recommend to put the ``i2c-bcm2708`` in the ``/etc/modules`` files. After
+    every reboot, the module will be automatically loaded.
+
 
 If you got the adafruit library up and running, you can simply install the latest stable package using the command
 
