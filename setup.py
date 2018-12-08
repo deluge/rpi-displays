@@ -1,67 +1,41 @@
-import codecs
 import os
-import sys
+from codecs import open
 
 from setuptools import setup, find_packages
 
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 VERSION = __import__('rpi_displays').__version__
 
 
-if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist upload')
-    os.system('python setup.py bdist_wheel upload')
-    print('You probably want to also tag the version now:')
-    print('  git tag -a %s -m "version %s"' % (VERSION, VERSION))
-    print('  git push --tags')
-    sys.exit()
-
-
-def read(*parts):
-    filename = os.path.join(os.path.dirname(__file__), *parts)
-    with codecs.open(filename, encoding='utf-8') as fp:
-        return fp.read()
-
-
-test_requirements = [
-    'tox',
-    'tox-pyenv',
-    'mock',
-    'factory-boy',
-    'pydocstyle',
-    'pytest',
-    'pytest-cov',
-    'pytest-flakes',
-    'pytest-pep8',
-    'pytest-isort',
-]
+with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
 
 
 setup(
     name='rpi-displays',
     version=VERSION,
+    description='Python library to put text/chars to several rpi displays.',
+    long_description=long_description,
     url='https://github.com/deluge/rpi-displays',
+    project_urls={
+        'Bug Reports': 'https://github.com/deluge/rpi-displays/issues',
+        'Source': 'https://github.com/deluge/rpi-displays',
+    },
     author='Benjamin Banduhn',
     author_email='deluge@banduhn.com',
-    description='Python library to put text/chars to several rpi displays.',
-    long_description=read('README.rst'),
-    license='GNU GENERAL PUBLIC',
-    packages=find_packages(exclude=['examples*', 'tests*']),
-    include_package_data=True,
+    packages=find_packages(exclude=['tests', 'tests.*', 'examples*']),
     install_requires=[],
-    extras_require={
-        'tests': test_requirements,
-        'docs': ['sphinx>=1.4,<1.5'],
-    },
+    include_package_data=True,
+    keywords='rpi displays raspberry pi',
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: Unix',
         'Programming Language :: Python',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
-    ]
+        'Programming Language :: Python :: 3.6',
+    ],
 )

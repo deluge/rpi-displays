@@ -1,14 +1,14 @@
 rpi-displays
 ============
 
-.. image:: https://badge.fury.io/py/rpi-displays.png
-    :target: http://badge.fury.io/py/rpi-displays
+.. image:: https://badge.fury.io/py/rpi-displays.svg
+    :target: https://badge.fury.io/py/rpi-displays
 
 .. image:: https://travis-ci.org/deluge/rpi-displays.svg?branch=master
     :target: https://travis-ci.org/deluge/rpi-displays
 
-.. image:: https://coveralls.io/repos/deluge/rpi-displays/badge.svg
-    :target: https://coveralls.io/r/deluge/rpi-displays
+.. image:: https://codecov.io/gh/deluge/rpi-displays/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/deluge/rpi-displays
 
 .. image:: https://readthedocs.org/projects/rpi-displays/badge/?version=latest
     :target: https://readthedocs.org/projects/rpi-displays/?badge=latest
@@ -82,6 +82,25 @@ ToDos
 It would be nice to get this package more functionality and not only for one thing.
 Have a look at the `TODO.rst <https://github.com/deluge/rpi-displays/blob/master/TODO.rst/>`_
 So feel free to fork this repo and let it grow!
+
+
+Prepare for development
+-----------------------
+
+A Python 3.6 interpreter is required in addition to pipenv.
+
+.. code-block:: shell
+
+    $ pipenv install --python 3.6 --dev
+    $ pipenv shell
+    $ pip install -e .
+
+
+Now you're ready to run the tests:
+
+.. code-block:: shell
+
+    $ pipenv run py.test
 
 
 Resources

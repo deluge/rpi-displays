@@ -1,28 +1,15 @@
 language: python
-sudo: false
 
 python:
-  - '3.4'
-  - '3.5'
-
-env:
-  - TOXENV=py34
-  - TOXENV=py35
-
-matrix:
-  exclude:
-  - python: '3.4'
-    env: TOXENV=py35
-  - python: '3.5'
-    env: TOXENV=py34
+  - "3.5"
+  - "3.6"
 
 install:
-  - pip install tox
+  - pip install pipenv codecov
+  - pipenv install --dev
+  - pipenv run pip install -e .
 
-script:
-  - tox
+script: pipenv run py.test --cov
 
 after_success:
-  - pip install coverage coveralls
-  - coverage report
-  - coveralls
+  - codecov

@@ -1,5 +1,11 @@
-include README.rst LICENSE.rst setup.cfg
+include README.rst
+include CHANGELOG.rst
+include LICENSE.rst
+include setup.cfg
+
+recursive-include rpi_displays *.py
 recursive-include rpi_displays/locale *
-recursive-include rpi_displays/templates *
-recursive-include rpi_displays/static *
-recursive-exclude rpi_displays .DS_Store
+recursive-exclude rpi_displays/tests *
+recursive-exclude examples/ *
+recursive-exclude examples/example *
+recursive-exclude build/ *
