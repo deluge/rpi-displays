@@ -94,7 +94,6 @@ A Python 3.6 interpreter is required in addition to pipenv.
     $ pipenv install --python 3.6 --dev
     $ pipenv shell
     $ pip install -e .
-    $ pip install twine
 
 
 Now you're ready to run the tests:
