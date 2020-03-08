@@ -1,15 +1,17 @@
 language: python
 
 python:
-  - "3.5"
-  - "3.6"
+    - "3.5"
+    - "3.6"
+    - "3.7"
+    - "3.8"
 
 install:
-  - pip install pipenv codecov
-  - pipenv install --dev
-  - pipenv run pip install -e .
+    - pip install pipenv codecov
+    - pipenv install --dev
+    - pipenv run pip install -e .
 
 script: pipenv run py.test --cov
 
 after_success:
-  - codecov
+    - codecov
