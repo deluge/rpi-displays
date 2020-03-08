@@ -12,7 +12,6 @@ pytest-cov = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
 factory-boy = "*"
-twine = "*"
 
 [packages]
 
