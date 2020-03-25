@@ -12,6 +12,18 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 
+dev_require = [
+    'pytest',
+    'pytest-isort',
+    'pytest-django',
+    'pytest-cov',
+    'pytest-flake8',
+    'sphinx',
+    'sphinx-rtd-theme',
+    'factory-boy',
+]
+
+
 setup(
     name='rpi-displays',
     version=VERSION,
@@ -24,8 +36,11 @@ setup(
     },
     author='Benjamin Banduhn',
     author_email='deluge@banduhn.com',
-    packages=find_packages(exclude=['tests', 'tests.*', 'examples*']),
+    packages=find_packages(exclude=['tests', 'tests.*', 'docs', 'examples*']),
     install_requires=[],
+    extras_require={
+        'dev': dev_require,
+    },
     include_package_data=True,
     keywords='rpi displays raspberry pi',
     classifiers=[

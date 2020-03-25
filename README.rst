@@ -4,14 +4,15 @@ rpi-displays
 .. image:: https://badge.fury.io/py/rpi-displays.svg
     :target: https://badge.fury.io/py/rpi-displays
 
-.. image:: https://travis-ci.org/deluge/rpi-displays.svg?branch=master
-    :target: https://travis-ci.org/deluge/rpi-displays
+.. image:: https://github.com/deluge/rpi-displays/workflows/Testing/badge.svg?branch=master
+    :target: https://github.com/deluge/rpi-displays/actions?query=workflow%3ATesting
 
 .. image:: https://codecov.io/gh/deluge/rpi-displays/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/deluge/rpi-displays
 
 .. image:: https://readthedocs.org/projects/rpi-displays/badge/?version=latest
-    :target: https://readthedocs.org/projects/rpi-displays/?badge=latest
+  :target: http://rpi-displays.readthedocs.org/en/latest/?badge=latest
+  :alt: Documentation Status
 
 A Python 3 library to put text to several displays which are connected with a raspberry-pi.
 
@@ -87,20 +88,22 @@ So feel free to fork this repo and let it grow!
 Prepare for development
 -----------------------
 
-A Python 3.6 interpreter is required in addition to pipenv.
+A Python 3 interpreter is required. If you use pyenv with a virtualenv, follow the next steps
 
 .. code-block:: shell
 
-    $ pipenv install --python 3.6 --dev
-    $ pipenv shell
-    $ pip install -e .
+    $ cd /path/to/project-root/
+    $ mkvirtualenv rpi-displays
+    # activate virtualenv, if not activated yet
+    # and install all dev requirements:
+    $ pip install -e .[dev]
 
 
 Now you're ready to run the tests:
 
 .. code-block:: shell
 
-    $ pipenv run py.test
+    $ py.test
 
 
 Resources
