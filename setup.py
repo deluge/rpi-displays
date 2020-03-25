@@ -15,12 +15,10 @@ with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
 dev_require = [
     'pytest',
     'pytest-isort',
-    'pytest-django',
     'pytest-cov',
     'pytest-flake8',
     'sphinx',
     'sphinx-rtd-theme',
-    'factory-boy',
 ]
 
 
