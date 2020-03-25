@@ -5,6 +5,7 @@
 .coverage
 .cache
 .pytest_cache
+coverage.xml
 htmlcov/
 dist/
 build/
